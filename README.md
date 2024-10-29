@@ -18,4 +18,4 @@ Because it’s not just about getting answers – it’s about enjoying the expe
 
 ## Try it out and enjoy the Ninja experience! 🎉
 
-<h2><a href='https://ninja.vercel.app/' target='blank'>Visit</a></h2>
+<h2><a href='https://ninja-sigma-liard.vercel.app/' target='blank'>Visit</a></h2>
