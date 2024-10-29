@@ -1,0 +1,327 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Body Styles */
+body {
+    position: relative;
+    background-image: radial-gradient(circle, #fbe1ff, #fce4ff, #fde8ff, #fdebff, #feefff, #fbefff, #f8f0ff, #f5f0ff, #eceefe, #e2ecfc, #d9eaf9, #d0e8f4);
+}
+
+/* Dark Mode Overlay */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: 1s;
+    background-image: radial-gradient(circle, #1e313b, #202f3e, #252c3f, #2d283d, #352439);
+}
+
+body.dark-mode .background-overlay {
+    opacity: 1;
+}
+
+/* Ninja Container Layout */
+.ninja-container {
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+    gap: 10px;
+}
+
+/* Header Styles */
+.ninja-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ninja-header .box-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ninja-header .box-logo svg {
+    padding: 5px;
+    background-color: #333;
+    border-radius: 12px;
+    fill: #fff;
+    transition: background-color 1s;
+}
+
+body.dark-mode .ninja-header .box-logo svg {
+    background-color: #222;
+}
+
+.ninja-header .box-logo h2 {
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 1s;
+}
+
+body.dark-mode .ninja-header .box-logo h2 {
+    color: #fff;
+}
+
+/* Main Content Body */
+.ninja-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    overflow-y: auto;
+}
+
+.ninja-body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Welcome Text Styling */
+.ninja-body .welcome {
+    max-width: 700px;
+    text-align: center;
+}
+
+.ninja-body .welcome h2, .ninja-body .welcome h3 {
+    font-size: clamp(26px, 3.5vw, 35px);
+    transition: color 1s;
+}
+
+body.dark-mode .ninja-body .welcome h2 {
+    color: #fff;
+}
+
+.ninja-body .welcome h3 {
+    color: #444;
+    transition: color 1s;
+}
+
+body.dark-mode .ninja-body .welcome h3, body.dark-mode .ninja-body .welcome p {
+    color: #c5c5c5;
+}
+
+.ninja-body .welcome p {
+    font-size: clamp(14px, 2vw, 18px);
+    color: #444;
+    transition: color 1s;
+}
+
+/* Message Styles */
+.ninja-body .message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 80%;
+    padding: 4px 8px;
+    font-size: clamp(18px, 2.5vw, 24px);
+}
+
+body.dark-mode .ninja-body .message {
+    color: #fff;
+}
+
+/* User Message Styling */
+.ninja-body .message.user-message {
+    align-self: flex-end;
+    padding: 0;
+}
+
+.ninja-body .message.user-message .text-message {
+    padding: 4px 8px;
+    background-color: #2196f3;
+    color: #fff;
+    border-radius: 10px 10px 0 10px;
+    transition: background-color 1s, color 1s;
+}
+
+body.dark-mode .ninja-body .message.user-message .text-message {
+    background-color: #4c6879;
+}
+
+.ninja-body .message.user-message img {
+    width: 50%;
+    margin-top: 5px;
+    border-radius: 10px 10px 0 10px;
+}
+
+/* Ninja Message Styling */
+.ninja-body .message.ninja-message {
+    align-self: flex-start;
+    border-radius: 10px 10px 10px 0;
+    background-color: #fff;
+    transition: background-color 1s, color 1s;
+}
+
+body.dark-mode .ninja-body .message.ninja-message {
+    background-color: #2e3d46;
+}
+
+/* Loading Dots Animation */
+.ninja-body .ninja-message .loading-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 12px;
+}
+
+.ninja-body .ninja-message .loading-box .dot {
+    width: 9px;
+    height: 9px;
+    background-color: #e763fc;
+    border-radius: 50%;
+    animation: dot-load 1.4s infinite;
+}
+
+.ninja-body .ninja-message .loading-box .dot:nth-child(1) { animation-delay: .2s; }
+.ninja-body .ninja-message .loading-box .dot:nth-child(2) { animation-delay: .4s; }
+.ninja-body .ninja-message .loading-box .dot:nth-child(3) { animation-delay: .6s; }
+
+@keyframes dot-load {
+    0%, 90% { transform: translateY(0); }
+    35% { opacity: 0.4; transform: translateY(-5px); }
+    60% { opacity: 0.2; }
+}
+
+/* Footer Section */
+.ninja-footer {
+    position: relative;
+}
+
+/* Message Input Styles */
+.ninja-footer .message-input {
+    width: 100%;
+    height: 45px;
+    padding: 5px 75px 5px 5px;
+    background-color: transparent;
+    box-shadow: 0 0 20px 0 #00000029;
+    border-radius: 10px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    transition: color 1s, background-color 1s;
+}
+
+body.dark-mode .ninja-footer .message-input {
+    color: #fff;
+    background-color: #00052f40;
+}
+
+/* Control Buttons */
+.ninja-footer .controls {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ninja-footer .controls button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 50%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: color 1s;
+}
+
+body.dark-mode .ninja-footer .controls button {
+    color: #fff;
+}
+
+.ninja-footer .controls button#send-btn {
+    padding-top: 3px;
+    color: #fff;
+    background-color: #333;
+    display: none;
+    transition: color 1s, background-color 1s;
+}
+
+.ninja-footer .message-input:valid ~ .controls #send-btn {
+    display: inline-block;
+}
+
+body.dark-mode .ninja-footer .controls button#send-btn {
+    color: #333;
+    background-color: #fff;
+}
+
+/* Image Selection Styles */
+.ninja-footer .image-selected {
+    position: absolute;
+    right: 0;
+    display: none;
+    opacity: 0;
+}
+
+.ninja-footer .image-selected.show {
+    display: block;
+    animation: show-image-selected .5s forwards;
+}
+
+@keyframes show-image-selected {
+    0% { bottom: 50%; }
+    100% { opacity: 1; bottom: 120%; }
+}
+
+.ninja-footer .image-selected div { position: relative; }
+
+.ninja-footer .image-selected button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px 5px 5px 5px;
+}
+
+.ninja-footer .image-selected img {
+    width: 120px;
+    border-radius: 10px;
+}
+
+/* Theme Toggle */
+#theme-toggle {
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 1s;
+}
+
+/* Emoji Picker */
+.ninja-footer em-emoji-picker {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.show-emoji-picker em-emoji-picker {
+    visibility: visible;
+    z-index: 49797;
+    animation: show-image-selected .5s forwards;
+}
