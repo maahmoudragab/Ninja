@@ -1,5 +1,5 @@
 // API Constants
-const API_KEY_GEMINI = `AIzaSyCm5iXYjxnD4U-9FW4ARWatGrEFoJ30vmg`;
+const API_KEY_GEMINI = `AIzaSyCX3pW4z83UHMYLoVLvo7OcHYOfTewBjsw`;
 const API_URL_GEMINI = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-exp-0827:generateContent?key=${API_KEY_GEMINI}`;
 
 // DOM Elements
