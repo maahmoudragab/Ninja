@@ -1,6 +1,6 @@
 // API Constants
 const API_KEY_GEMINI = `AIzaSyBHFp8Azu5H6GxvrYvtvtLt0ONVY6mTHdM`;
-const API_URL_GEMINI = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-exp-0827:generateContent?key=${API_KEY_GEMINI}`;
+const API_URL_GEMINI = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${API_KEY_GEMINI}`;
 
 // DOM Elements
 const ninja_body = document.querySelector(".ninja-body");
